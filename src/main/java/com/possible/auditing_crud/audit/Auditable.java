@@ -15,20 +15,17 @@ import static javax.persistence.TemporalType.TIMESTAMP;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U> {
-    @CreatedBy
-    //Declares a field as the one representing the principal(User) that created the entity containing the field.
+    @CreatedBy           //Declares a field as the one representing the principal(User) that created the entity containing the field.
     protected U createdBy;
 
-    @CreatedDate   //declares a field as the one rep the date the entity containing the field was created
+    @CreatedDate        //declares a field as the one rep the date the entity containing the field was created
     @Temporal(TIMESTAMP)
     protected Date createdDate;
 
-    @LastModifiedBy
-    //Declares a field as the one representing the principal(User) that recently modified the entity containing the field.
+    @LastModifiedBy             ///Declares a field as the one representing the principal(User) that recently modified the entity containing the field.
     protected U lastModifiedBy;
 
-    @LastModifiedDate
-    //Declares a field as the one representing the date the entity containing the field was recently modified.
+    @LastModifiedDate                  //Declares a field as the one representing the date the entity containing the field was recently modified.
     @Temporal(TIMESTAMP)
     protected Date lastModifiedDate;
 
